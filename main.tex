@@ -1,0 +1,97 @@
+% !TeX program = xelatex   % 告诉 VS Code/编辑器用 xelatex 编译，支持中文
+
+\documentclass[UTF8]{ctexart} 
+% \documentclass：声明“文档类型”，最常用的是 article（文章）
+% ctexart：是 article 的中文版本，支持中文输入
+% [UTF8]：表示使用 UTF-8 编码（一般文件默认就是 UTF-8）
+
+% ---------- 常用宏包 ----------
+\usepackage{geometry}   % 控制页面大小和边距
+\usepackage{graphicx}   % 插入图片（\includegraphics）
+\usepackage{amsmath}    % 数学公式（如 \frac a b 分数）
+\usepackage{listings}   % 插入代码环境
+\usepackage{xcolor}     % 定义颜色
+\usepackage{hyperref}   % 插入超链接
+\usepackage{fancyhdr}   % 美化页眉页脚
+
+% ---------- 页面设置 ----------
+\geometry{a4paper, scale=0.8}     
+% a4paper：A4 纸张
+% scale=0.8：把版心缩小到 80%，让边距更宽，看起来舒服
+
+\pagestyle{fancy}                 
+% 设置页眉页脚风格为 fancyhdr 提供的“fancy”模式
+\fancyhf{}                        
+% 清空默认的页眉页脚
+\fancyhead[C]{系统开发工具基础 实验报告} 
+% 页眉（head），C 表示居中，内容是标题
+\fancyfoot[C]{\thepage}           
+% 页脚（foot），C 表示居中，内容是页码 \thepage
+
+% ---------- 报告信息 ----------
+\title{《系统开发工具基础》实验报告\\ }  %此处填写报告标题 
+% \title{} 定义标题，\\ 表示换行
+\author{姓名：马一诺 \\ 学号：24020007088 \\ 专业：计算机科学与技术}
+% \author{} 作者信息，\quad 表示一个小空格
+\date{\today} 
+% \date{} 定义日期，这里用 \today 自动生成当天日期
+
+% ==================================================
+\begin{document}
+% 文档开始
+
+\maketitle 
+% 生成封面标题，使用上面 \title, \author, \date 定义的信息
+
+\tableofcontents 
+% 自动生成目录（根据 \section, \subsection 生成）
+\newpage
+% 换页
+
+\section{实验目的}
+% \section{}：一级标题
+简要说明实验的目标，比如：掌握 Git 基本使用、掌握 LaTeX 文档编写。
+
+\section{实验环境}
+- 硬件：xxx  
+- 软件：Windows 11, VS Code, TeX Live 2024  
+% “-” 自动生成列表，两个空格表示换行
+
+\section{实验原理}
+解释实验相关的理论知识或工具原理，例如 Git 的版本控制思想。
+
+\section{实验步骤}
+1. 安装 Git  
+2. 初始化仓库  
+3. 编写 LaTeX 文件  
+4. 推送到 GitHub  
+% 用 “1. 2. 3.” 自动生成有序列表
+
+\section{实验结果}
+这里可以插入实验截图：  
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{example-image}
+  \caption{GitHub 成功推送页面截图}
+\end{figure}
+% \begin{figure} 环境插入图片
+% [h] 表示 here（尽量放在当前位置）
+% \centering：居中
+% \includegraphics[width=0.6\textwidth]{文件名}：插入图片，宽度是正文宽度的 60%
+% \caption{}：图片标题
+
+\section{实验总结}
+写一些收获、体会和遇到的问题。
+
+\section{参考文献}
+\begin{thebibliography}{99}
+\bibitem{git} Git 官方文档: \url{https://git-scm.com/doc}
+\bibitem{latex} LaTeX Wikibook: \url{https://en.wikibooks.org/wiki/LaTeX}
+\end{thebibliography}
+% thebibliography 环境：生成参考文献
+% {99} 表示最多两位数的编号
+% \bibitem{标识符} 文献条目
+% \url{} 插入超链接
+
+\end{document}
+% 文档结束
